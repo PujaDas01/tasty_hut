@@ -1,0 +1,50 @@
+/* ----------------NAVBAR STYLE------------ */
+.navbarWrapper {
+    display: flex;
+    padding: 1rem 0;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.logoContainer {
+    flex: 1;
+}
+
+.navLinkContainer {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.navLinkContainer a {
+    text-decoration: none;
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    color: grey;
+    letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navLinkContainer a:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+.navLinkContainer a::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(243, 190, 46);
+    height: 3px;
+    width: 0;
+    left: 25%;
+    bottom: -6px;
+    transition: 0.3s;
+}
+
+.navLinkContainer a:hover::after {
+    width: 50%;
+}
