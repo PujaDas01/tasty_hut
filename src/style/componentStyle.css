@@ -9,3 +9,156 @@
     margin-left: auto;
     margin-right: auto;
 }
+/* --------------HOME STYLE-------------- */
+
+.homeWrapper {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 0;
+}
+
+.topBannerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bannerBox1Container {
+    width: 58%;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    border-radius: 25px;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.bannerBox1_left {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+}
+
+.foodForeverBtn {
+    background-color: inherit;
+    border: 2px solid white;
+    padding: 0.3rem 0.4rem;
+}
+
+.bannerBox1_left h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.orderNowBtn {
+    background-color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.bannerBox1_right {
+    padding-top: 1rem;
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.arrowBtn {
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    height: 28px;
+}
+
+.arrowIcon {
+    transform: translateY(-4px);
+}
+
+.bannerBox2Container {
+    background-image: url('.././../public/images/pic2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left 60%;
+    border-radius: 25px;
+    width: 40%;
+}
+
+.bottomBannerWrapper {
+    margin-top: 1.5rem;
+}
+
+.bannerBox3Container {
+    background-color: lightblue;
+}
+
+.bannerBox3_left {
+    flex: 3;
+    align-items: flex-start;
+}
+
+.bannerBox3_right {
+    flex: 1;
+    padding-top: 0;
+    flex-direction: column;
+}
+
+.buyNowContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.buyNowContainer h3 {
+    padding-top: 1rem;
+}
+
+.bannerBox4Container {
+    background-color: rgb(249, 150, 150);
+    border-radius: 25px;
+    width: 40%;
+    padding: 1rem 1.5rem;
+}
+
+.iconContainer {
+    display: flex;
+    font-size: 20px;
+    padding-bottom: 0.6rem;
+}
+
+.commonCircle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+.icon {
+    width: 100%;
+    transform: translateY(5px);
+}
+
+.appleIconContainer {
+    background-color: white;
+    color: red;
+}
+
+.bannerBox4Container p {
+    font-size: 11px;
+    /* color: black; */
+    padding: 0.4rem 0;
+}
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+}
+
+.ratingIconContainer {
+    padding-left: 5px;
+    padding-top: 3px;
+    color: red;
+    font-size: 8px;
+}
