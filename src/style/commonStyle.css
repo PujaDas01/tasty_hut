@@ -61,3 +61,33 @@
     cursor: pointer;
     color: white;
 }
+/* ----------------CUSTOM INPUT STYLE------------- */
+.input-wrapper {
+    padding-top: 1.5%;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+
+.input {
+    cursor: pointer;
+    border: 1px solid rgb(210, 209, 209);
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+    outline: transparent;
+    font-size: 12px;
+    margin-bottom: 0.3rem;
+}
+
+.input::placeholder {
+    color: rgb(171, 168, 168);
+}
+
+.input:focus {
+    outline: 1px solid black;
+}

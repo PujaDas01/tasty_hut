@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
 import {BsFillArrowUpRightCircleFill} from 'react-icons/bs';
 import {AiFillAndroid, AiFillApple} from 'react-icons/ai';
 import {IoMdStar} from 'react-icons/io';
@@ -23,16 +23,13 @@ const Home = () => {
           </div>
           <div className='bannerBox1_right'>
             <button className='arrowBtn'>
-              <BsFillArrowUpRightCircleFill className='arrowIcon' color={'white'} size={35} />
+              <BsFillArrowUpRightCircleFill className='arrowIcon' color={'white'} size={50} />
               </button>
           </div>
         </div>
         <div className='bannerBox2Container'>
         </div>
       </section>
-
-
-
       <section className='bottomBannerWrapper topBannerWrapper'>
         <div className='bannerBox1Container bannerBox3Container'>
           <div className='bannerBox1_left bannerBox3_left'>
