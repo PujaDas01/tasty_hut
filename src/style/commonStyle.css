@@ -91,3 +91,107 @@
 .input:focus {
     outline: 1px solid black;
 }
+/* ---------------------FORM LAYOUT STYLE------------------- */
+.authWrapper {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    display: flex;
+}
+
+.leftFormContainer {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftFormContent {
+    height: 100%;
+    width: 60%;
+    padding: 4rem 0;
+}
+
+.leftFormContent h1 {
+    padding-bottom: 1rem;
+}
+
+.rightFormContainer {
+    background-color: rgb(243, 190, 46);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glassBg {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    width: 80%;
+    height: 80vh;
+    border-radius: 25px;
+    position: relative;
+}
+
+.circleContainer {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.positionIcon1 {
+    left: -20px;
+    top: 70%;
+}
+
+.handShakeIcon {
+    transform: translate(12px, 14px);
+    font-size: 25px;
+}
+
+.positionIcon2 {
+    right: -20px;
+    bottom: 70%;
+}
+
+.pointsIcon {
+    transform: translate(10px, 10px);
+    font-size: 20px;
+}
+
+.glassContent {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rightGlassBoxHeading {
+    color: white;
+    display: flex;
+    flex: 2;
+}
+
+.rightGlassBoxImgContainer {
+    flex: 3;
+    display: flex;
+    align-items: flex-end;
+}
+
+.rightGlassBoxImgContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.translateImg {
+    transform: translateY(13px);
+}

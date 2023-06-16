@@ -7,16 +7,17 @@ import About from './pages/primary_screens/About';
 import Menu from './pages/primary_screens/Menu';
 import Services from './pages/primary_screens/Services';
 import SignUp from './pages/authentication/SignUp';
+import Login from './pages/authentication/Login';
 
 const App = () => {
   return (
     <div className='app'>
-      {/* <SignUp/> */}
       <Router>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/signUp' element={<SignUp/>}/>
+          <Route path='/login' element={<Login/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/menu' element={<Menu/>}/>
           <Route path='/services' element={<Services/>}/>
