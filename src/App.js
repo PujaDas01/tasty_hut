@@ -5,9 +5,8 @@ import Home from './pages/primary_screens/Home';
 import About from './pages/primary_screens/About';
 import Menu from './pages/primary_screens/Menu';
 import Gallery from './pages/primary_screens/Gallery';
-import SignUp from './pages/authentication/SignUp';
-import Login from './pages/authentication/Login';
-import Footer from './components/Footer';
+// import SignUp from './pages/authentication/SignUp';
+// import Login from './pages/authentication/Login';
 
 const App = () => {
   return (
@@ -16,13 +15,12 @@ const App = () => {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/signUp' element={<SignUp/>}/>
-          <Route path='/login' element={<Login/>}/>
+          {/* <Route path='/signUp' element={<SignUp/>}/> */}
+          {/* <Route path='/login' element={<Login/>}/> */}
           <Route path='/about' element={<About/>}/>
           <Route path='/menu' element={<Menu/>}/>
           <Route path='/gallery' element={<Gallery/>}/>
         </Routes>
-        <Footer/>
       </Router>
     </div>
   );

@@ -2,9 +2,6 @@
 .navbarWrapper {
     display: flex;
     padding: 1rem 0;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
 }
 
@@ -261,4 +258,120 @@
 
 .translateImg {
     transform: translateY(13px);
+}
+/* ---------------------FOOTER STYLE------------------- */
+.footerWrapper {
+    padding: 0 0 2rem 0;
+}
+
+.getInTouchContainer {
+    background-color: #e6b1ab;
+    padding: 3rem;
+    border-radius: 25px;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.getInTouchHeaderContainer {
+    flex: 1;
+}
+
+.getInTouchHeaderContainer h1 {
+    color: white;
+    font-size: 30px;
+    padding-bottom: 0.5rem;
+}
+
+.getInTouchHeaderContainer p {
+    color: white;
+    font-size: 12px;
+}
+
+.emailContainer {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.emailBox {
+    background-color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 25px;
+}
+
+.emailBox input {
+    padding: 0.4rem 0.6rem;
+    border: none;
+    outline: transparent;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.emailBox input::placeholder {
+    font-size: 12px;
+    color: grey;
+}
+
+.emailBox button {
+    padding: 0.4rem 0.8rem;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.footerBottomContainer {
+    background-color: #c7e7fe;
+    border-radius: 25px;
+    padding: 2rem 2rem 2.5rem 2rem;
+}
+
+.navbarComponent {
+    padding-bottom: 1rem;
+    display: flex;
+}
+
+.navbarBox {
+    flex: 3;
+}
+
+.socialMediaHandlesContainer {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.socialMediaCircle {
+    background-color: white;
+    width: 6%;
+    height: 45%;
+    border-radius: 50%;
+    position: relative;
+}
+
+.socialMediaCircle a {
+    color: black;
+    position: absolute;
+    left: 13%;
+    top: 10%;
+}
+
+.socialMediaCircle a:hover {
+    color: #fa4c3b;
+    transition: 0.3s;
+}
+
+.footerBottomContainer hr {
+    border: 1px solid black;
+}
+
+.footerBottomContainer p {
+    padding-top: 2rem;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
 }

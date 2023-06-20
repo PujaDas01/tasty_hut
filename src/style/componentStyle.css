@@ -186,7 +186,7 @@
 .recipeWrapper {
     background-color: #f9ebea;
     border-radius: 25px;
-    margin: 4rem 0;
+    margin: 4rem 0 2rem 0;
     padding: 2rem;
 }
 
@@ -292,7 +292,7 @@
 
 /* ------------------------GALLERY STYLE--------------------- */
 .galleryWrapper {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 2rem 0;
     height: 100vh;
     display: flex;
     gap: 2rem;
