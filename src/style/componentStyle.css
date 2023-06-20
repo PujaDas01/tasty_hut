@@ -8,6 +8,7 @@
     max-width: 98%;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(255, 252, 245, 255);
 }
 /* -------------------------SIGN UP STYLE------------ */
 .haveAnAccount {
@@ -30,7 +31,7 @@
 }
 /* --------------HOME STYLE-------------- */
 
-.homeWrapper {
+.commonWrapper {
     width: 98%;
     margin-left: auto;
     margin-right: auto;
@@ -47,7 +48,7 @@
     width: 58%;
     display: flex;
     flex-direction: row;
-    background-color: red;
+    background-color: #fc4b37;
     border-radius: 25px;
     padding: 1rem 2rem 1rem 2rem;
 }
@@ -84,11 +85,12 @@
 }
 
 .arrowBtn {
-    background-color: black;
+    background-color: #2e2e2e;
     border-radius: 50%;
     border: none;
     height: 40px;
     width: 49px;
+    cursor: pointer;
 }
 
 .arrowIcon {
@@ -105,11 +107,11 @@
 }
 
 .bottomBannerWrapper {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0 2rem 0;
 }
 
 .bannerBox3Container {
-    background-color: lightblue;
+    background-color: #c7e7fe;
 }
 
 .bannerBox3_left {
@@ -135,7 +137,7 @@
 }
 
 .bannerBox4Container {
-    background-color: rgb(249, 150, 150);
+    background-color: #e6b1ab;
     border-radius: 25px;
     width: 40%;
     padding: 1rem 1.5rem;
@@ -151,8 +153,8 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background-color: red;
-    color: white;
+    background-color: #fa4c3b;
+        color: #fdfefe;
 }
 
 .icon {
@@ -161,8 +163,8 @@
 }
 
 .appleIconContainer {
-    background-color: white;
-    color: red;
+    background-color: #fdfefe;
+        color: #fa4c3b;
 }
 
 .bannerBox4Container p {
@@ -178,6 +180,150 @@
 .ratingIconContainer {
     padding-left: 5px;
     padding-top: 3px;
-    color: red;
+    color: #fa4c3b;
     font-size: 8px;
+}
+.recipeWrapper {
+    background-color: #f9ebea;
+    border-radius: 25px;
+    margin: 4rem 0;
+    padding: 2rem;
+}
+
+.recipeHeaderBox {
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.recipeTopicContainer {
+    width: 30%;
+}
+
+.searchInputContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.iconSearchBox {
+    width: 40%;
+    border-radius: 25px;
+    border: 1.5px solid grey;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    font-size: 22px;
+    width: 12%;
+    color: grey;
+    cursor: pointer;
+}
+
+.searchInput {
+    padding: 0.6rem 1rem 0.6rem 0;
+    width: 88%;
+    border: none;
+    outline: transparent;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.searchInput::placeholder {
+    color: grey;
+}
+
+.recipeBottomBox {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.recipeButtonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipeBgContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('../../public/images/pizza5.jpg');
+    background-position: center 50%;
+    flex: 7;
+    min-height: 280px;
+}
+
+.dishContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dishContainer div {
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+}
+
+.dishBox1 {
+    background-image: url('../../public/images/pizza6.jpg');
+    background-position: right 50%;
+}
+
+.dishBox2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../../public/images/pizza.jpg');
+    background-position: center 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dishBox2 p {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* ------------------------GALLERY STYLE--------------------- */
+.galleryWrapper {
+    padding: 0.5rem 0;
+    height: 100vh;
+    display: flex;
+    gap: 2rem;
+}
+
+.galleryWrapper section {
+    height: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.galleryImage1 {
+    background: url('../../public/images/fried-chicken.jpg');
+    background-position: center 50%;
+    flex: 7;
+}
+
+.galleryImage2 {
+    background-image: url('../../public/images/pizza5.jpg');
+    background-position: center 50%;
+    flex: 4;
+}
+
+.galleryImage3 {
+    background-image: url('../../public/images/pasta.jpg');
+    flex: 4;
+}
+
+.galleryImage4 {
+    background-image: url('../../public/images/mexican-tacos.jpg');
+    flex: 7;
 }

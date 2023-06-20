@@ -24,20 +24,20 @@
     position: relative;
     font-size: 12px;
     font-weight: 600;
-    color: grey;
+    color: black;
     letter-spacing: 0.5px;
     font-family: 'Poppins', sans-serif;
 }
 
 .navLinkContainer a:hover {
-    color: black;
+    color: #fc4b37;
     transition: 0.3s;
 }
 
 .navLinkContainer a::after {
     content: "";
     position: absolute;
-    background-color: rgb(243, 190, 46);
+    background-color: #fc4b37;
     height: 3px;
     width: 0;
     left: 25%;
@@ -60,6 +60,32 @@
     border-radius: 25px;
     cursor: pointer;
     color: white;
+}
+/* -----------------SECONDARY BUTTON STYLE---------------- */
+.secondaryButtonContainer {
+    border: 1px solid #fc4b37;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.secondaryButton {
+    background-color: inherit;
+    color: #fc4b37;
+    width: 100%;
+    border-radius: 25px;
+    padding: 0.4rem 1rem;
+    border: none;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.secondaryButtonContainer:hover {
+    background-color: #fc4b37;
+}
+
+.secondaryButton:hover {
+    color: white;
+    background-color: #fc4b37;
 }
 /* ----------------CUSTOM INPUT STYLE------------- */
 .input-wrapper {
@@ -90,6 +116,47 @@
 
 .input:focus {
     outline: 1px solid black;
+}
+/* -----------------------BG IMAGE STYLE---------------- */
+.bgPictureWrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+}
+
+.dishNameBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.dishNameBox p {
+    background-color: #fbfcfc;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fa4c3b;
+    padding: 0.4rem 1rem;
+}
+
+.dishNameBox span {
+    background-color: #fbfcfc;
+    width: 4px;
+    height: 6px;
+}
+
+.dishNameBox button {
+    background-color: #2e2e2e;
+    border-radius: 50%;
+    border: none;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+}
+
+.arrowBtnIcon {
+    transform: translateY(-4px);
 }
 /* ---------------------FORM LAYOUT STYLE------------------- */
 .authWrapper {

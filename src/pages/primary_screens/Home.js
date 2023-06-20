@@ -2,11 +2,13 @@ import React from 'react';
 import CustomButton from '../../components/CustomButton';
 import {BsFillArrowUpRightCircleFill} from 'react-icons/bs';
 import {AiFillAndroid, AiFillApple} from 'react-icons/ai';
+import {FiSearch} from 'react-icons/fi';
 import {IoMdStar} from 'react-icons/io';
+import BgImage from '../../components/BgImage';
 
 const Home = () => {
   return (
-    <div className='homeWrapper'>
+    <div className='commonWrapper'>
       <section className='topBannerWrapper'>
         <div className='bannerBox1Container'>
           <div className='bannerBox1_left'>
@@ -23,8 +25,8 @@ const Home = () => {
           </div>
           <div className='bannerBox1_right'>
             <button className='arrowBtn'>
-              <BsFillArrowUpRightCircleFill className='arrowIcon' color={'white'} size={50} />
-              </button>
+              <BsFillArrowUpRightCircleFill className='arrowIcon' color={'#fbfcfc'} size={50} />
+            </button>
           </div>
         </div>
         <div className='bannerBox2Container'>
@@ -52,7 +54,7 @@ const Home = () => {
             <div className='commonCircle appleIconContainer'><AiFillApple className='icon'/></div>
           </div>
           <h3>Download Tastyhut</h3>
-          <p>And Get 10% Chashback</p>
+          <p>And Get 10% Cashback</p>
           <div className='ratingContainer'>
             <h4>4.9</h4>
             <div className='ratingIconContainer'>
@@ -61,6 +63,50 @@ const Home = () => {
               <IoMdStar/>
               <IoMdStar/>
               <IoMdStar/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='recipeWrapper'>
+        <div className='recipeHeaderBox'>
+          <div className='recipeTopicContainer'>
+            <h1>Recipes</h1>
+          </div>
+          <div className='searchInputContainer'>
+            <div className='iconSearchBox'>
+              <FiSearch className='searchIcon'/>
+              <input type='text' className='searchInput' placeholder='Search Recipe And More...' />
+            </div>
+          </div>
+        </div>
+        <div className='recipeBottomBox'>
+          <div className='recipeButtonContainer'>
+            <CustomButton
+              buttonType='secondary'
+              buttonText='Burger'
+            />
+            <CustomButton
+              buttonType='secondary'
+              buttonText='Pizza'
+            />
+            <CustomButton
+              buttonType='secondary'
+              buttonText='Salad'
+            />
+            <CustomButton
+              buttonType='secondary'
+              buttonText='Dessert'
+            />
+          </div>
+          <BgImage
+            bgImageClassName='recipeBgContainer'
+            dishName='Sausage Pizza'
+          />
+          <div className='dishContainer'>
+            <div className='dishBox1'>
+            </div>
+            <div className='dishBox2'>
+              <p>30+</p>
             </div>
           </div>
         </div>
