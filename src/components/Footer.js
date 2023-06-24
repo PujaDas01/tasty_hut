@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import {RiFacebookCircleFill} from 'react-icons/ri';
 import {AiFillTwitterCircle, AiFillInstagram} from 'react-icons/ai';
+import CustomButton from './CustomButton';
 
 const Footer = () => {
   return (
@@ -14,7 +15,10 @@ const Footer = () => {
             <div className='emailContainer'>
                 <div className='emailBox'>
                     <input type='email' placeholder='Enter Your Email Address...' />
-                    <button>Submit</button>
+                    <CustomButton
+                        customWrapperStyle={{paddingTop: '0px', paddingBottom: '0px'}}
+                        buttonText='Submit'
+                    />
                 </div>
             </div>
         </section>

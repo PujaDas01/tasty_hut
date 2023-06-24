@@ -14,6 +14,9 @@ const Navbar = () => {
         <Link to='/about'>About</Link>
         <Link to='/menu'>Menu</Link>
         <Link to='/gallery'>Gallery</Link>
+        <Link to='/recipeDetail'>Recipe Detail</Link>
+        <Link to='/modal'>Modal</Link>
+        <Link to='/addRecipe'>Add Recipe</Link>
         {/* <Link to='/signUp'>SignUp</Link> */}
         {/* <Link to='/login'>Login</Link> */}
       </div>

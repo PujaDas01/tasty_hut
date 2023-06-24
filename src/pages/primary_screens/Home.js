@@ -15,13 +15,11 @@ const Home = () => {
           <div className='bannerBox1Container'>
             <div className='bannerBox1_left'>
               <CustomButton
-                buttonClassName='foodForeverBtn'
-                buttonStyle={{fontWeight: '500'}}
+                buttonStyle={{fontWeight: '500', backgroundColor: 'inherit', border: '1.5px solid white'}}
                 buttonText='BEST FOOD FOREVER'
               />
               <h1>FOOD <br/> LOVER'S <br/> PARADISE</h1>
               <CustomButton
-                buttonClassName='orderNowBtn'
                 buttonText='ORDER NOW'
               />
             </div>
@@ -44,7 +42,6 @@ const Home = () => {
               <div className='buyNowContainer'>
                 <h3>$5.30</h3>
                 <CustomButton
-                  buttonClassName='orderNowBtn'
                   buttonText='Buy Now'
                 />
               </div>

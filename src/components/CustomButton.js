@@ -8,7 +8,7 @@ const CustomButton = (props) => {
         (<div className='secondaryButtonContainer'>
           <button className={`secondaryButton ${props.secondaryClassName}`} style={props.secondaryStyle} onClick={props.onClick}>{props.buttonText}</button>
         </div>) :
-        (<div className='customButtonWrapper'>
+        (<div style={props.customWrapperStyle} className='customButtonWrapper'>
           <button className={`customButton ${props.buttonClassName}`} style={props.buttonStyle} onClick={props.onClick}>{props.buttonText}</button>
       </div>)}
     </>

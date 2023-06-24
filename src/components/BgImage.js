@@ -3,15 +3,27 @@ import '../style/commonStyle.css';
 
 const BgImage = (props) => {
   return (
-    <div className={`bgPictureWrapper ${props.bgImageClassName}`}>
-        <div className='dishNameBox'>
+    <>
+    {props.bgImageClassName ? (
+      <div className={`bgPictureWrapper ${props.bgImageClassName}`} onClick={props.onContainerClick}>
+      {props.bgText === 'text' ? (<h2 className={props.className}>{props.text}</h2>) : 
+        (<div className='dishNameBox'>
             <p>{props.dishName}</p>
             <span></span>
-            <button>
-                <BsFillArrowUpRightCircleFill className='arrowBtnIcon' color={'#fbfcfc'} size={28} />
+            <button onClick={props.onClick}>
+              <BsFillArrowUpRightCircleFill className='arrowBtnIcon' color={'#fbfcfc'} size={28} />
             </button>
-        </div>
+        </div>)}
     </div>
+    ) : (
+      <div className={`bgPictureWrapper selectImageBox`} onClick={props.onContainerClick}>
+      {props.bgText === 'text' ? (<h2 className={props.className}>{props.text}</h2>) : 
+        (
+          <img src={`./images/${props.imageValue}`} height='auto' width='100%' />
+        )}
+    </div>
+    )}
+    </>
   )
 }
 

@@ -59,21 +59,9 @@
     flex-direction: column;
 }
 
-.foodForeverBtn {
-    background-color: inherit;
-    border: 2px solid white;
-    padding: 0.3rem 0.4rem;
-}
-
 .bannerBox1_left h1 {
     color: white;
     font-size: 2.5rem;
-}
-
-.orderNowBtn {
-    background-color: black;
-    padding: 0.5rem 1rem;
-    border: none;
 }
 
 .bannerBox1_right {
@@ -326,4 +314,153 @@
 .galleryImage4 {
     background-image: url('../../public/images/mexican-tacos.jpg');
     flex: 7;
+}
+/* -----------------------RECIPE DETAIL STYLE----------------------- */
+.recipeDetailContainer {
+    /* background-color: red; */
+}
+
+.detailTopSection {
+    border-radius: 25px;
+    display: flex;
+    gap: 4rem;
+}
+
+.recipeImageContainer {
+    flex: 3;
+    min-height: 50vh;
+}
+
+.recipeImage {
+    background-image: url('../../public/images/fried-chicken.jpg');
+    background-position: center 50%;
+    height: 100%;
+}
+
+.recipeTitleContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.recipeTitleContainer h1 {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.cookDetailContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookDetailContainer p {
+    border: 2px solid #e6b1ab;
+    padding: 0.4rem 0.8rem;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
+.cookDetailContainer p span {
+    font-weight: 600;
+    color: black;
+}
+
+.detailBottomSection {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.ingredientsContainer {
+    flex: 3;
+}
+
+.ingredientTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredientNumberContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.ingredientNumberContainer button {
+    padding: 0.2rem 0.4rem;
+    background-color: inherit;
+    border: 2px solid #e6b1ab;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ingredientNumberContainer p {
+    font-weight: 600;
+}
+
+.numberSignIcon {
+    transform: translateY(2px);
+}
+
+.ingredientsListContainer {
+    padding: 1.5rem 0 1rem 0;
+}
+
+.ingredientRow {
+    display: flex;
+    align-items: center;
+    padding: 0 0 1.6rem 0;
+}
+
+.ingredientContent {
+    display: flex;
+    align-items: center;
+    flex: 3;
+    gap: 1.3rem;
+}
+
+.vegetableIcon {
+    background-color: #e6b1ab;
+    padding: 0.2rem 0.4rem;
+    border-radius: 25px;
+}
+
+.ingredientName {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ingredientFeature {
+    font-size: 11px;
+    padding-top: 0.2rem;
+}
+
+.gramContent {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gramContent p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.instructionsContainer {
+    flex: 4;
+}
+
+.instructionsContainer h2 {
+    padding-bottom: 1.5rem;
+}
+
+.instructionsContainer p {
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 1rem;
 }
