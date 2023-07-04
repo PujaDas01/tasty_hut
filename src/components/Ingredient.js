@@ -5,8 +5,7 @@ import {AiTwotoneDelete} from 'react-icons/ai';
 import {MdEditDocument} from 'react-icons/md';
 import {GiTomato} from 'react-icons/gi';
 
-const Ingredient = () => {
-    const [ingredientItems, setIngredientItems] = useState([]);
+const Ingredient = (props) => {
     const [ingredientName, setIngredientName] = useState('');
     const [ingredientType, setIngredientType] = useState('');
     const [ingredientQuantity, setIngredientQuantity] = useState('');
@@ -25,8 +24,8 @@ const Ingredient = () => {
             alert('Please fill the data!');
         } 
         else if (isEditItem) {
-            setIngredientItems(
-                ingredientItems.map(item => {
+            props.setIngredientItems(
+                props.ingredientItems.map(item => {
                 if(item.id === isEditItem.id) {
                     return {...item, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
                 } return item;
@@ -43,7 +42,7 @@ const Ingredient = () => {
                 quantity: ingredientQuantity,
             }
 
-            setIngredientItems([...ingredientItems, newData]);
+            props.setIngredientItems([...props.ingredientItems, newData]);
             emptyValue();
         }
     }
@@ -68,14 +67,12 @@ const Ingredient = () => {
     }
 
     const handleDelete = (id) => {
-        const updateList = ingredientItems.filter((item) => item.id !== id);
-        setIngredientItems(updateList);
+        const updateList = props.ingredientItems.filter((item) => item.id !== id);
+        props.setIngredientItems(updateList);
         emptyValue();
         setIsEditItem(null);
     }
 
-    console.log('items', ingredientItems);
-    console.log('EDIT', isEditItem);
   return (
     <div className='ingredientsContainer commonWrapper'>
         {isShowForm && (
@@ -121,7 +118,7 @@ const Ingredient = () => {
                 )}
         </div>
         <div className='ingredientsListContainer'>
-            {ingredientItems.map((item) => {
+            {props.ingredientItems.map((item) => {
                 return(
                     <div className='ingredientRow' key={item.id}>
                         <div className='ingredientContent'>

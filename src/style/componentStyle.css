@@ -383,30 +383,6 @@
     justify-content: space-between;
 }
 
-.ingredientNumberContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.ingredientNumberContainer button {
-    padding: 0.2rem 0.4rem;
-    background-color: inherit;
-    border: 2px solid #e6b1ab;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.ingredientNumberContainer p {
-    font-weight: 600;
-}
-
-.numberSignIcon {
-    transform: translateY(2px);
-}
-
 .ingredientsListContainer {
     padding: 1.5rem 0 1rem 0;
 }
