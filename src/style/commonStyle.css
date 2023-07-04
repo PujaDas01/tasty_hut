@@ -96,11 +96,26 @@
     padding-top: 1.5%;
 }
 
+textarea {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid rgb(210, 209, 209);
+    cursor: pointer;
+    padding: 1.4rem;
+    resize: none;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
+textarea:focus {
+    outline: 1px solid black;
+}
 .label {
     font-size: 12px;
     font-weight: 600;
     padding-bottom: 0.4rem;
     display: inline-block;
+    padding-left: 0.3rem;
 }
 
 .input {
@@ -434,4 +449,16 @@
     width: 100%;
     height: auto;
     border-radius: 25px;
+}
+/* ----------------INGREDIENT STYLE------------------- */
+.editDeleteContainer {
+    display: flex;
+    padding-top: 0.2rem;
+}
+
+.editDeleteContainer button {
+    background-color: inherit;
+    color: black;
+    padding: 0;
+    margin-left: 1rem;
 }

@@ -11,7 +11,7 @@ const Modal = (props) => {
     <div className='commonWrapper'>
       {props.imageValue ? (
         <BgImage
-          imageValue={props.imageValue}
+          imageSource={props.imageValue}
           onContainerClick={() => setShowModal(true)}
         />) : (
         <BgImage 
@@ -20,7 +20,7 @@ const Modal = (props) => {
           onContainerClick={() => setShowModal(true)}>
         </BgImage>) 
       }
-      {showModal && <ShowModal selectHandler={props.selectHandler} closeModal={closeModal} />}
+      {showModal && <ShowModal pickImage={props.selectHandler} closeModal={closeModal} />}
     </div>
   )
 }

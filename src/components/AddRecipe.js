@@ -2,9 +2,15 @@ import React, {useState} from 'react';
 import Modal from './Modal';
 import {GrFormSubtract, GrFormAdd} from 'react-icons/gr';
 import {GiTomato} from 'react-icons/gi';
+import CustomInput from './CustomInput';
 
 const AddRecipe = () => {
   const [selectedImage, setSelectedImage] = useState('');
+  const [dishTitle, setDishTitle] = useState('');
+  const [totalTime, setTotalTime] = useState('');
+  const [prep, setPrep] = useState('');
+  const [chill, setChill] = useState('');
+  const [cook, setCook] = useState('');
 
   const selectImageHandler = (image) => {
     setSelectedImage(image);
@@ -19,12 +25,42 @@ const AddRecipe = () => {
               <Modal imageValue={selectedImage} selectHandler={selectImageHandler} />
             </div>
             <div className='recipeTitleContainer'>
-                <h1>Crispy Fried Chicken</h1>
+                <CustomInput 
+                    type='text'
+                    inputId='Recipe Title'
+                    labelText='Title'
+                    value={dishTitle}
+                    onChange={(e) => setDishTitle(e.target.value)}
+                />
                 <div className='cookDetailContainer'>
-                    <p>Total Time <span>30m</span></p>
-                    <p>Prep <span>20m</span></p>
-                    <p>Chill <span>00m</span></p>
-                    <p>Cook <span>10m</span></p>
+                    <CustomInput
+                        type='text'
+                        inputId='totalTime'
+                        labelText='Total Time'
+                        value={totalTime}
+                        onChange={(e) => setTotalTime(e.target.value)}
+                    />
+                    <CustomInput
+                        type='text'
+                        inputId='prepTime'
+                        labelText='Prep'
+                        value={prep}
+                        onChange={(e) => setPrep(e.target.value)}
+                    />
+                    <CustomInput
+                        type='text'
+                        inputId='chill'
+                        labelText='Chill'
+                        value={chill}
+                        onChange={(e) => setChill(e.target.value)}
+                    />
+                    <CustomInput
+                        type='text'
+                        inputId='cook'
+                        labelText='Cook'
+                        value={cook}
+                        onChange={(e) => setCook(e.target.value)}
+                    />
                 </div>
             </div>
         </section>
@@ -99,8 +135,11 @@ const AddRecipe = () => {
             </div>
             <div className='instructionsContainer'>
                 <h2>Instructions</h2>
-                <p>Heat coconut oil on medium-high heat.</p>
-                <p>Thinly slice the onion and garlic and add to the pan and cook for 1 minute.</p>
+                {/* <p>Heat coconut oil on medium-high heat.</p>
+                <p>Thinly slice the onion and garlic and add to the pan and cook for 1 minute.</p> */}
+                <CustomInput
+                    inputType='textarea'
+                />
             </div>
         </section>
     </div>

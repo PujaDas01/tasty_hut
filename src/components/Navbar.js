@@ -17,6 +17,7 @@ const Navbar = () => {
         <Link to='/recipeDetail'>Recipe Detail</Link>
         <Link to='/modal'>Modal</Link>
         <Link to='/addRecipe'>Add Recipe</Link>
+        <Link to='/ingredient'>Ingredient</Link>
         {/* <Link to='/signUp'>SignUp</Link> */}
         {/* <Link to='/login'>Login</Link> */}
       </div>

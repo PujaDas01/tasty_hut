@@ -26,7 +26,7 @@ const ShowModal = (props) => {
                 {dishGallery.map((item) => {
                     return(
                         <div className="modalContentImageContainer" key={item.id} onClick={() => {
-                            props.selectHandler(item.dishImage)
+                            props.pickImage(item.dishImage);
                             props.closeModal();
                         }}>
                             <img src={`./images/${item.dishImage}`} alt={item.alt} />

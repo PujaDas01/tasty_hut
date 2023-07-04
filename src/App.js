@@ -8,6 +8,7 @@ import Gallery from './pages/primary_screens/Gallery';
 import RecipeDetail from './pages/primary_screens/RecipeDetail';
 import Modal from './components/Modal';
 import AddRecipe from './components/AddRecipe';
+import Ingredient from './components/Ingredient';
 // import SignUp from './pages/authentication/SignUp';
 // import Login from './pages/authentication/Login';
 
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/recipeDetail' element={<RecipeDetail/>}/>
           <Route path='/modal' element={<Modal/>}/>
           <Route path='/addRecipe' element={<AddRecipe/>}/>
+          <Route path='/ingredient' element={<Ingredient/>}/>
         </Routes>
       </Router>
     </div>

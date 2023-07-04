@@ -19,7 +19,7 @@ const BgImage = (props) => {
       <div className={`bgPictureWrapper selectImageBox`} onClick={props.onContainerClick}>
       {props.bgText === 'text' ? (<h2 className={props.className}>{props.text}</h2>) : 
         (
-          <img src={`./images/${props.imageValue}`} height='auto' width='100%' />
+          <img src={`./images/${props.imageSource}`} height='auto' width='100%' />
         )}
     </div>
     )}
