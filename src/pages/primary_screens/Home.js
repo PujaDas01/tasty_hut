@@ -99,6 +99,7 @@ const Home = () => {
             </div>
             <BgImage
               bgImageClassName='recipeBgContainer'
+              bgImage='pizza5.jpg'
               dishName='Sausage Pizza'
             />
             <div className='dishContainer'>

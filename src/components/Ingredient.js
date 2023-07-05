@@ -74,7 +74,7 @@ const Ingredient = (props) => {
     }
 
   return (
-    <div className='ingredientsContainer commonWrapper'>
+    <div className='ingredientsContainer'>
         {isShowForm && (
         <div className='ingredientFormContainer'>
             <CustomInput 

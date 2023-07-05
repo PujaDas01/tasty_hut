@@ -1,31 +1,33 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import BgImage from '../../components/BgImage';
+import { RecipeContext } from '../../context/recipeContext';
 
 const Gallery = () => {
+  const {recipeList} = useContext(RecipeContext);
+
+  console.log('recipeList', recipeList)
+
   return (
     <div className='commonWrapper galleryWrapper'>
       <section>
-        <BgImage
-          bgImageClassName='galleryImage1'
-          dishName='Crispy Fried Chicken'
-        />
-        <BgImage
-          bgImageClassName='galleryImage2'
-          dishName='Pizza With Sausage'
-        />
-      </section>
-      <section>
-        < BgImage
-            bgImageClassName='galleryImage1 galleryImage3'
-            dishName='Pasta In Tomato Sauce'
-        />
-        <BgImage
-          bgImageClassName='galleryImage2 galleryImage4'
-          dishName='Mexican Tacos'
-        />
+      {recipeList.map((item) => {
+        return(
+          <div className='galleryItem' key={item.id}>
+            <BgImage
+              bgImage={`${item.image}`}
+              bgImageStyle={{minHeight: 320, backgroundPosition: `center 50%`}}
+              dishName={item.title}
+            />
+          </div>
+        )
+        })}
       </section>
     </div>
   )
 }
 
 export default Gallery;
+
+
+
+

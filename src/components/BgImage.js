@@ -4,8 +4,12 @@ import '../style/commonStyle.css';
 const BgImage = (props) => {
   return (
     <>
-    {props.bgImageClassName ? (
-      <div className={`bgPictureWrapper ${props.bgImageClassName}`} onClick={props.onContainerClick}>
+    {props.bgImage ? ( 
+      <div style={{
+        ...props.bgImageStyle, 
+        backgroundImage: `url(../images/${props.bgImage})`
+        }} 
+        className={`bgPictureWrapper ${props.bgImageClassName}`} onClick={props.onContainerClick}>
       {props.bgText === 'text' ? (<h2 className={props.className}>{props.text}</h2>) : 
         (<div className='dishNameBox'>
             <p>{props.dishName}</p>
@@ -19,7 +23,7 @@ const BgImage = (props) => {
       <div className={`bgPictureWrapper selectImageBox`} onClick={props.onContainerClick}>
       {props.bgText === 'text' ? (<h2 className={props.className}>{props.text}</h2>) : 
         (
-          <img src={`./images/${props.imageSource}`} height='auto' width='100%' />
+          <img src={`./images/${props.imageSource}`} alt={props.imageSource} height='auto' width='100%' />
         )}
     </div>
     )}

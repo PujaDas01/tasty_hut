@@ -239,7 +239,7 @@
 }
 
 .recipeBgContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('../../public/images/pizza5.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
     background-position: center 50%;
     flex: 7;
     min-height: 280px;
@@ -280,41 +280,21 @@
 
 /* ------------------------GALLERY STYLE--------------------- */
 .galleryWrapper {
-    padding: 0.5rem 0 2rem 0;
-    height: 100vh;
     display: flex;
-    gap: 2rem;
 }
 
 .galleryWrapper section {
     height: auto;
     flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-wrap: wrap;
+        flex-direction: row;
+}
+.galleryItem {
+    width: 50%;
+    padding: 1rem;
 }
 
-.galleryImage1 {
-    background: url('../../public/images/fried-chicken.jpg');
-    background-position: center 50%;
-    flex: 7;
-}
-
-.galleryImage2 {
-    background-image: url('../../public/images/pizza5.jpg');
-    background-position: center 50%;
-    flex: 4;
-}
-
-.galleryImage3 {
-    background-image: url('../../public/images/pasta.jpg');
-    flex: 4;
-}
-
-.galleryImage4 {
-    background-image: url('../../public/images/mexican-tacos.jpg');
-    flex: 7;
-}
 /* -----------------------RECIPE DETAIL STYLE----------------------- */
 .recipeDetailContainer {
     /* background-color: red; */
@@ -332,7 +312,6 @@
 }
 
 .recipeImage {
-    background-image: url('../../public/images/fried-chicken.jpg');
     background-position: center 50%;
     height: 100%;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import BgImage from '../../components/BgImage';
-import {GrFormSubtract, GrFormAdd} from 'react-icons/gr';
 import {GiTomato} from 'react-icons/gi';
 
 const RecipeDetail = () => {
@@ -10,6 +9,7 @@ const RecipeDetail = () => {
             <div className='recipeImageContainer'>
                 <BgImage
                     bgImageClassName='recipeImage'
+                    bgImage='fried-chicken.jpg'
                     dishName='Non Vegetarian'
                 />
             </div>
@@ -27,11 +27,6 @@ const RecipeDetail = () => {
             <div className='ingredientsContainer'>
                 <div className='ingredientTitleContainer'>
                     <h2>Ingredients</h2>
-                    <div className='ingredientNumberContainer'>
-                        <button><GrFormSubtract className='numberSignIcon' /></button>
-                        <p>4</p>
-                        <button><GrFormAdd className='numberSignIcon'/></button>
-                    </div>
                 </div>
                 <div className='ingredientsListContainer'>
                     <div className='ingredientRow'>
