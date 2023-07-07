@@ -1,25 +1,31 @@
-import React from 'react';
+import { useParams } from 'react-router-dom';
 import BgImage from '../../components/BgImage';
 import {GiTomato} from 'react-icons/gi';
+import { useContext } from 'react';
+import { RecipeContext } from '../../context/recipeContext';
 
 const RecipeDetail = () => {
+    const {getRecipeListDetail} = useContext(RecipeContext);
+    const params = useParams();
+    const recipeData = getRecipeListDetail(params.recipeDetailId);
+
   return (
     <div className='commonWrapper recipeDetailContainer'>
         <section className='detailTopSection'>
             <div className='recipeImageContainer'>
                 <BgImage
                     bgImageClassName='recipeImage'
-                    bgImage='fried-chicken.jpg'
-                    dishName='Non Vegetarian'
+                    bgImage={recipeData.image}
+                    dishName={recipeData.recipeType}
                 />
             </div>
             <div className='recipeTitleContainer'>
-                <h1>Crispy Fried Chicken</h1>
+                <h1>{recipeData.title}</h1>
                 <div className='cookDetailContainer'>
-                    <p>Total Time <span>30m</span></p>
-                    <p>Prep <span>20m</span></p>
-                    <p>Chill <span>00m</span></p>
-                    <p>Cook <span>10m</span></p>
+                    <p>Total Time <span>{recipeData.totalTime}</span></p>
+                    <p>Prep <span>{recipeData.prep}</span></p>
+                    <p>Chill <span>{recipeData.chill}</span></p>
+                    <p>Cook <span>{recipeData.cook}</span></p>
                 </div>
             </div>
         </section>
@@ -29,68 +35,29 @@ const RecipeDetail = () => {
                     <h2>Ingredients</h2>
                 </div>
                 <div className='ingredientsListContainer'>
-                    <div className='ingredientRow'>
-                        <div className='ingredientContent'>
-                            <div className='vegetableIcon'>
-                                <GiTomato size={20}/>
+                    {recipeData.ingredients.map((item) => {
+                        return(
+                        <div className='ingredientRow' key={item.id}>
+                            <div className='ingredientContent'>
+                                <div className='vegetableIcon'>
+                                    <GiTomato size={20}/>
+                                </div>
+                                <div>
+                                    <p className='ingredientName'>{item.name}</p>
+                                    <p className='ingredientFeature'>{item.type}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p className='ingredientName'>Chopped tomatoes</p>
-                                <p className='ingredientFeature'>Tinned</p>
-                            </div>
-                        </div>
-                        <div className='gramContent'>
-                            <p>400g</p>
-                        </div>
-                    </div>
-                    <div className='ingredientRow'>
-                        <div className='ingredientContent'>
-                            <div className='vegetableIcon'>
-                                <GiTomato size={20}/>
-                            </div>
-                            <div>
-                                <p className='ingredientName'>Coconut milk</p>
-                                <p className='ingredientFeature'>Tinned</p>
+                            <div className='gramContent'>
+                                <p>{item.quantity}</p>
                             </div>
                         </div>
-                        <div className='gramContent'>
-                            <p>400g</p>
-                        </div>
-                    </div>
-                    <div className='ingredientRow'>
-                        <div className='ingredientContent'>
-                            <div className='vegetableIcon'>
-                                <GiTomato size={20}/>
-                            </div>
-                            <div>
-                                <p className='ingredientName'>Chickpeas</p>
-                                <p className='ingredientFeature'>Tinned</p>   
-                            </div>
-                        </div>
-                        <div className='gramContent'>
-                            <p>240g</p>
-                        </div>
-                    </div>
-                    <div className='ingredientRow'>
-                        <div className='ingredientContent'>
-                            <div className='vegetableIcon'>
-                                <GiTomato size={20}/>
-                            </div>
-                            <div>
-                                <p className='ingredientName'>Coriander</p>
-                                <p className='ingredientFeature'>Chopped</p>
-                            </div>
-                        </div>
-                        <div className='gramContent'>
-                            <p>15g</p>
-                        </div>
-                    </div>
+                        )
+                    })}
                 </div>
             </div>
             <div className='instructionsContainer'>
                 <h2>Instructions</h2>
-                <p>Heat coconut oil on medium-high heat.</p>
-                <p>Thinly slice the onion and garlic and add to the pan and cook for 1 minute.</p>
+                <p>{recipeData.instructions}</p>
             </div>
         </section>
     </div>
