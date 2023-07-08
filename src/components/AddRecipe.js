@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from './Modal';
 import CustomInput from './CustomInput';
 import Ingredient from './Ingredient';
+import CustomButton from './CustomButton';
+import { RecipeContext } from '../context/recipeContext';
 
 const AddRecipe = () => {
   const [selectedImage, setSelectedImage] = useState('');
@@ -10,15 +12,55 @@ const AddRecipe = () => {
   const [prep, setPrep] = useState('');
   const [chill, setChill] = useState('');
   const [cook, setCook] = useState('');
+  const [recipeType, setRecipeType] = useState('');
   const [ingredientList, setIngredientList] = useState([]);
+  const [instructions, setInstructions] = useState('');
+
+  const {addRecipeData} = useContext(RecipeContext);
 
   const selectImageHandler = (image) => {
     setSelectedImage(image);
   }
+
+  const handleSubmitRecipe = () => {
+    const newRecipeData = {
+        id: new Date().getTime().toString(),
+        image: selectedImage,
+        title: dishTitle,
+        totalTime: totalTime,
+        prep: prep,
+        chill: chill,
+        cook: cook,
+        recipeType: recipeType,
+        ingredients: ingredientList,
+        instructions: instructions,
+    }
+    if(!selectedImage || !dishTitle || !totalTime || !prep || !chill || !cook || !ingredientList || !instructions) {
+        alert('Please enter all the data !');
+    } else {
+        addRecipeData(newRecipeData);
+        setSelectedImage('');
+        setDishTitle('');
+        setTotalTime('');
+        setPrep('');
+        setChill('');
+        setCook('');
+        setRecipeType('');
+        setIngredientList([]);
+        setInstructions('');
+        alert('Your data is send successfully !');
+    }
+  }
   
   return (
-    <div className='commonWrapper'>
-      <h1>Add Recipe</h1>
+    <div className='addRecipeWrapper commonWrapper'>
+        <div className='addRecipeTitleBox'>
+            <h1>Add Recipe</h1>
+            <CustomButton
+                buttonText='Submit'
+                onClick={handleSubmitRecipe}
+            />
+        </div>
       <div className='recipeDetailContainer'>
         <section className='detailTopSection'>
             <div className='recipeImageContainer'>
@@ -27,10 +69,17 @@ const AddRecipe = () => {
             <div className='recipeTitleContainer'>
                 <CustomInput 
                     type='text'
-                    inputId='Recipe Title'
+                    inputId='recipeTitle'
                     labelText='Title'
                     value={dishTitle}
                     onChange={(e) => setDishTitle(e.target.value)}
+                />
+                <CustomInput
+                    type='text'
+                    inputId='recipeType'
+                    labelText='Recipe Type'
+                    value={recipeType}
+                    onChange={(e) => setRecipeType(e.target.value)}
                 />
                 <div className='cookDetailContainer'>
                     <CustomInput
@@ -70,6 +119,8 @@ const AddRecipe = () => {
                 <h2>Instructions</h2>
                 <CustomInput
                     inputType='textarea'
+                    value={instructions}
+                    onChange={(e) => setInstructions(e.target.value)}
                 />
             </div>
         </section>

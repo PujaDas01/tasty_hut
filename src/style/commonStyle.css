@@ -462,3 +462,13 @@ textarea:focus {
     padding: 0;
     margin-left: 1rem;
 }
+/* --------------ADD RECIPE STYLE--------------- */
+.addRecipeWrapper {
+    padding: 0;
+}
+
+.addRecipeTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -9,12 +9,17 @@ export const RecipeContextProvider = (props) => {
     const getRecipeListDetail = (listId) => {
         return recipeListData.find(data => data.id === listId);
     }
+
+    const addRecipeData = (data) => {
+        setRecipeListData([...recipeListData, data]);
+    }
     
     return(
-        <RecipeContext.Provider 
+        <RecipeContext.Provider
             value={{
                 recipeListData,
                 getRecipeListDetail,
+                addRecipeData,
             }}>
                 {props.children}
         </RecipeContext.Provider>

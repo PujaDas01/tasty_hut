@@ -29,7 +29,10 @@ const CustomInput = (props) => {
   return (
     <div className={`${props.inputWrapperStyle} input-wrapper`}>
       {props.inputType === 'textarea' ? (
-        <textarea />
+        <textarea 
+          value={props.value}
+          onChange={props.onChange}
+        />
       ) : (
         <>
           <label 
