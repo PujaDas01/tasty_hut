@@ -8,6 +8,7 @@ const RecipeDetail = () => {
     const {getRecipeListDetail} = useContext(RecipeContext);
     const params = useParams();
     const recipeData = getRecipeListDetail(params.recipeDetailId);
+    console.log('detail', recipeData);
 
   return (
     <div className='commonWrapper recipeDetailContainer'>
@@ -35,7 +36,7 @@ const RecipeDetail = () => {
                     <h2>Ingredients</h2>
                 </div>
                 <div className='ingredientsListContainer'>
-                    {recipeData.ingredients.map((item) => {
+                    {recipeData?.ingredients?.map((item) => {
                         return(
                         <div className='ingredientRow' key={item.id}>
                             <div className='ingredientContent'>

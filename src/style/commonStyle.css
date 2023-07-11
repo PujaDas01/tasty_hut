@@ -165,7 +165,7 @@ textarea:focus {
     height: 6px;
 }
 
-.dishNameBox button {
+.arrowButton {
     background-color: #2e2e2e;
     border-radius: 50%;
     border: none;
@@ -174,6 +174,22 @@ textarea:focus {
     cursor: pointer;
 }
 
+.arrowButton:hover {
+    background-color: #fa4c3b;
+}
+
+.additionalBtn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0.3rem 0.4rem;
+    border-radius: 25px;
+}
+
+.additionalBtn:hover {
+    color: #fa4c3b;
+}
 .arrowBtnIcon {
     transform: translateY(-4px);
 }
@@ -467,8 +483,11 @@ textarea:focus {
     padding: 0;
 }
 
-.addRecipeTitleBox {
+.btnHandlerContainer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    }
+    
+    .btnHandlerContainer div {
+        width: 20%;
 }

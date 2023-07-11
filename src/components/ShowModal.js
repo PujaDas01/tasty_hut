@@ -29,7 +29,7 @@ const ShowModal = (props) => {
                             props.pickImage(item.dishImage);
                             props.closeModal();
                         }}>
-                            <img src={`./images/${item.dishImage}`} alt={item.alt} />
+                            <img src={`../images/${item.dishImage}`} alt={item.alt} />
                         </div>
                     )
                 })}

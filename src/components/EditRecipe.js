@@ -1,13 +1,13 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import Modal from './Modal';
 import CustomInput from './CustomInput';
 import Ingredient from './Ingredient';
 import CustomButton from './CustomButton';
 import { RecipeContext } from '../context/recipeContext';
 import {toast} from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const AddRecipe = () => {
+const EditRecipe = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [dishTitle, setDishTitle] = useState('');
   const [totalTime, setTotalTime] = useState('');
@@ -19,29 +19,44 @@ const AddRecipe = () => {
   const [instructions, setInstructions] = useState('');
   const navigate = useNavigate();
 
-  const {addRecipeData} = useContext(RecipeContext);
+  const {editRecipeData, getRecipeListDetail} = useContext(RecipeContext);
+  const params = useParams();
+
+  useEffect(() => {
+    const data = getRecipeListDetail(params.id);
+    setDishTitle(data.title);
+    setTotalTime(data.totalTime);
+    setPrep(data.prep);
+    setChill(data.chill);
+    setCook(data.cook);
+    setRecipeType(data.recipeType);
+    setInstructions(data.instructions);
+    setSelectedImage(data.image);
+    setIngredientList(data.ingredients);
+  }, [params, getRecipeListDetail]);
 
   const selectImageHandler = (image) => {
     setSelectedImage(image);
   }
 
-  const handleAddRecipe = () => {
-    const newRecipeData = {
-        id: new Date().getTime().toString(),
-        image: selectedImage,
-        title: dishTitle,
-        totalTime: totalTime,
-        prep: prep,
-        chill: chill,
-        cook: cook,
-        recipeType: recipeType,
-        ingredients: ingredientList,
-        instructions: instructions,
-    }
+const handleEditRecipe = () => {
     if(!selectedImage || !dishTitle || !totalTime || !prep || !chill || !cook || !ingredientList || !instructions) {
         toast.warn('Please enter all the data !');
     } else {
-        addRecipeData(newRecipeData);
+        editRecipeData(
+            {
+                id: params.id,
+                title: dishTitle,
+                totalTime: totalTime,
+                image: selectedImage,
+                prep: prep,
+                chill: chill,
+                cook: cook,
+                recipeType: recipeType,
+                ingredients: ingredientList,
+                instructions: instructions,
+            }
+        );
         setSelectedImage('');
         setDishTitle('');
         setTotalTime('');
@@ -51,18 +66,18 @@ const AddRecipe = () => {
         setRecipeType('');
         setIngredientList([]);
         setInstructions('');
-        toast.success('Data Added Successfully !');
+        toast.success('Data Updated Successfully !');
         navigate(`/gallery/`);
     }
-  }
+}
   
   return (
     <div className='addRecipeWrapper commonWrapper'>
         <div className='btnHandlerContainer'>
             <CustomButton
                 buttonType='secondary'
-                buttonText='Add Recipe'
-                onClick={handleAddRecipe}
+                buttonText='Edit Recipe'
+                onClick={handleEditRecipe}
             />
         </div>
       <div className='recipeDetailContainer'>
@@ -133,4 +148,4 @@ const AddRecipe = () => {
   )
 }
 
-export default AddRecipe;
+export default EditRecipe;

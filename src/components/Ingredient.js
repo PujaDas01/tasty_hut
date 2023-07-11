@@ -27,8 +27,9 @@ const Ingredient = (props) => {
             props.setIngredientItems(
                 props.ingredientItems.map(item => {
                 if(item.id === isEditItem.id) {
-                    return {...item, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
-                } return item;
+                    return {id: isEditItem.id, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
+                } 
+                return item;
                 }));
                 setIsEditItem(null);
                 emptyValue();
