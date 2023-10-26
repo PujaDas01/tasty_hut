@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import FormLayout from '../../components/FormLayout';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
-import { emailValidator } from '../../service/EmailValidator';
+import { emailValidator } from '../../services/EmailValidator';
 
 const Login = () => {
 
@@ -10,19 +10,19 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const onLoginHandler = () => {
-        let emailTrimmedValue = email.trim(); 
-      
-        emailValidator(email);
-        if(!emailTrimmedValue) {
-          alert('Please enter your email id.');
-        } else if(!emailValidator(emailTrimmedValue)) {
-          alert('Invalid email.');
-        } else if(password.length < 6) {
-          alert('Password must consist 6 characters.');
-        } else {
-          alert('Logged In Successfully.');
-        }
+      let emailTrimmedValue = email.trim();
+    
+      emailValidator(email);
+      if(!emailTrimmedValue) {
+        alert('Please enter your email id.');
+      } else if(!emailValidator(emailTrimmedValue)) {
+        alert('Invalid email.');
+      } else if(password.length < 6) {
+        alert('Password must consist 6 characters.');
+      } else {
+        alert('Logged In Successfully.');
       }
+    }
 
   return (
     <FormLayout

@@ -14,10 +14,9 @@ const Home = () => {
         <section className='topBannerWrapper'>
           <div className='bannerBox1Container'>
             <div className='bannerBox1_left'>
-              <CustomButton
-                buttonStyle={{fontWeight: '500', backgroundColor: 'inherit', border: '1.5px solid white'}}
-                buttonText='BEST FOOD FOREVER'
-              />
+              <div className='bestFoodContainer'>
+                <p>BEST FOOD FOREVER</p>
+              </div>
               <h1>FOOD <br/> LOVER'S <br/> PARADISE</h1>
               <CustomButton
                 buttonText='ORDER NOW'

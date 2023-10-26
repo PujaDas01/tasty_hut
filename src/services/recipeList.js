@@ -18,7 +18,7 @@ export const recipeList = [
             {
                 id: '2',
                 name: 'Garlic',
-                type: 'Finely chopped', 
+                type: 'Finely chopped',
                 quantity: '50g',
             },
             {

@@ -17,10 +17,9 @@ const EditRecipe = () => {
   const [recipeType, setRecipeType] = useState('');
   const [ingredientList, setIngredientList] = useState([]);
   const [instructions, setInstructions] = useState('');
-  const navigate = useNavigate();
-
   const {editRecipeData, getRecipeListDetail} = useContext(RecipeContext);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const data = getRecipeListDetail(params.id);

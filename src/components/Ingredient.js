@@ -11,27 +11,27 @@ const Ingredient = (props) => {
     const [ingredientQuantity, setIngredientQuantity] = useState('');
     const [isShowForm, setIsShowForm] = useState(false);
     const [toggleButton, setToggleButton] = useState(true);
-    const [isEditItem, setIsEditItem] = useState(null);
+    const [itemId, setItemId] = useState(null);
 
     const emptyValue = () => {
         setIngredientName('');
         setIngredientType('');
         setIngredientQuantity('');
     }
-
+    
     const onCreateIngredientHandler = () => {
         if(!ingredientName || !ingredientType || !ingredientQuantity) {
             alert('Please fill the data!');
         } 
-        else if (isEditItem) {
+        else if (itemId) {
             props.setIngredientItems(
                 props.ingredientItems.map(item => {
-                if(item.id === isEditItem.id) {
-                    return {id: isEditItem.id, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
+                if(item.id === itemId) {
+                    return {id: itemId, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
                 } 
                 return item;
                 }));
-                setIsEditItem(null);
+                setItemId(null);
                 emptyValue();
         }
 
@@ -60,7 +60,7 @@ const Ingredient = (props) => {
 
     const handleEdit = (item) => {
         setIsShowForm(true);
-        setIsEditItem(item);
+        setItemId(item.id);
         setIngredientName(item.name);
         setIngredientType(item.type);
         setIngredientQuantity(item.quantity);
@@ -71,9 +71,9 @@ const Ingredient = (props) => {
         const updateList = props.ingredientItems.filter((item) => item.id !== id);
         props.setIngredientItems(updateList);
         emptyValue();
-        setIsEditItem(null);
+        setItemId(null);
     }
-
+    
   return (
     <div className='ingredientsContainer'>
         {isShowForm && (
@@ -100,7 +100,7 @@ const Ingredient = (props) => {
                 onChange={(e) => setIngredientQuantity(e.target.value)}
             />
             <CustomButton
-                buttonText={isEditItem ? 'Update' : 'Submit' }
+                buttonText={itemId ? 'Update' : 'Submit'}
                 onClick={onCreateIngredientHandler}
             />
         </div>)}

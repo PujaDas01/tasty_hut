@@ -11,7 +11,7 @@ export const RecipeContextProvider = (props) => {
     }
 
     const addRecipeData = (data) => {
-        setRecipeListData([data, ...recipeListData,]);
+        setRecipeListData([data, ...recipeListData]);
     }
 
     const editRecipeData = (editedData) => {
@@ -24,7 +24,6 @@ export const RecipeContextProvider = (props) => {
         setRecipeListData(data);
     }
 
-    
     return(
         <RecipeContext.Provider
             value={{

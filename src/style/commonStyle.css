@@ -47,7 +47,7 @@
 }
 /* ----------------CUSTOM BUTTON STYLE------------- */
 
-.customButtonWrapper {
+.customButtonContainer {
     padding: 1rem 0;
 }
 
@@ -58,12 +58,12 @@
     cursor: pointer;
     color: white;
     background-color: black;
-        padding: 0.6rem 1.3rem;
+    padding: 0.6rem 1.3rem;
         border: none;
     }
     
-    .customButton:hover {
-        color: #fc4b37;
+.customButton:hover {
+    color: #fc4b37;
 }
 /* -----------------SECONDARY BUTTON STYLE---------------- */
 .secondaryButtonContainer {

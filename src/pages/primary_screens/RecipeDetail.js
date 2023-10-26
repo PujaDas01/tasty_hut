@@ -8,7 +8,6 @@ const RecipeDetail = () => {
     const {getRecipeListDetail} = useContext(RecipeContext);
     const params = useParams();
     const recipeData = getRecipeListDetail(params.recipeDetailId);
-    console.log('detail', recipeData);
 
   return (
     <div className='commonWrapper recipeDetailContainer'>

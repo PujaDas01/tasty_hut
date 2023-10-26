@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { Link } from 'react-router-dom';
-import { emailValidator } from '../../service/EmailValidator';
+import { emailValidator } from '../../services/EmailValidator';
 import FormLayout from '../../components/FormLayout';
 // import { useNavigate } from 'react-router-dom';
 
