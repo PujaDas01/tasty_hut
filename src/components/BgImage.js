@@ -17,11 +17,7 @@ const BgImage = (props) => {
             <button className='arrowButton' onClick={props.onClick}>
               <BsFillArrowUpRightCircleFill className='arrowBtnIcon' color={'#fbfcfc'} size={28} />
             </button>
-            {props.additionalText ?
-            (<button style={props.additionalBtnStyle} className='additionalBtn' onClick={props.additionalBtnClick}>{props.btnText}</button>)
-            :
-            ('')
-            }
+            {(!!props.btnText && (<button style={props.additionalBtnStyle} className='additionalBtn' onClick={props.additionalBtnClick}>{props.btnText}</button>))}
         </div>)}
     </div>
     ) : (

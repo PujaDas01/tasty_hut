@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import FormLayout from '../../components/FormLayout';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
-import { emailValidator } from '../../services/EmailValidator';
+import { emailValidator } from '../../services/emailValidator';
 
 const Login = () => {
 

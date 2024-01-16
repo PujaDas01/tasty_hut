@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { Link } from 'react-router-dom';
-import { emailValidator } from '../../services/EmailValidator';
+import { emailValidator } from '../../services/emailValidator';
 import FormLayout from '../../components/FormLayout';
 // import { useNavigate } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ const onSignUpHandler = () => {
       translate
       formHeading='SignUp'
       rightHeading='Very good foods are waiting for you🤞 SignUp Now'
-      imageSrc='../../images/chef.png' 
+      imageSrc='../../images/chef.png'
       imageAlt='Chef'
     >
       <CustomInput
