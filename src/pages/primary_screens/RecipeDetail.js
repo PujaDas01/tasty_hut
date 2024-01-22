@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import BgImage from '../../components/BgImage';
-import {GiTomato} from 'react-icons/gi';
 import { useContext } from 'react';
 import { RecipeContext } from '../../context/recipeContext';
 
@@ -36,11 +35,12 @@ const RecipeDetail = () => {
                 </div>
                 <div className='ingredientsListContainer'>
                     {recipeData?.ingredients?.map((item) => {
+                        console.log('item', item);
                         return(
                         <div className='ingredientRow' key={item.id}>
                             <div className='ingredientContent'>
                                 <div className='vegetableIcon'>
-                                    <GiTomato size={20}/>
+                                    <img src={`/images/${item.ingredientImage}`} alt='Ingredient' title='Ingredient' />
                                 </div>
                                 <div>
                                     <p className='ingredientName'>{item.name}</p>

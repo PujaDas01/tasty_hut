@@ -20,7 +20,7 @@ const Modal = (props) => {
           onContainerClick={() => setShowModal(true)}>
         </BgImage>) 
       }
-      {showModal && <ShowModal pickImage={props.selectHandler} closeModal={closeModal} />}
+      {showModal && <ShowModal imageList={props.list} pickImage={props.selectHandler} closeModal={closeModal} />}
     </div>
   )
 }

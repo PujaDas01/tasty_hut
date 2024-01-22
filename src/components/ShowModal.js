@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { dishGallery } from "../services/dishGallery";
 import CustomButton from "./CustomButton";
 
 const ShowModal = (props) => {
@@ -23,13 +22,13 @@ const ShowModal = (props) => {
                     />
                 </div>
                 <div className="modalContent">
-                {dishGallery.map((item) => {
+                {props.imageList.map((item) => {
                     return(
                         <div className="modalContentImageContainer" key={item.id} onClick={() => {
                             props.pickImage(item.dishImage);
                             props.closeModal();
                         }}>
-                            <img src={`../images/${item.dishImage}`} alt={item.alt} />
+                            <img src={`/images/${item.dishImage}`} alt={item.alt} />
                         </div>
                     )
                 })}

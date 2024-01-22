@@ -3,9 +3,11 @@ import CustomButton from './CustomButton';
 import CustomInput from './CustomInput';
 import {AiTwotoneDelete} from 'react-icons/ai';
 import {MdEditDocument} from 'react-icons/md';
-import {GiTomato} from 'react-icons/gi';
+import Modal from './Modal';
+import { ingredientGallery } from '../services/ingredientGallery';
 
 const Ingredient = (props) => {
+    const [ingredientImage, setIngredientImage] = useState('');
     const [ingredientName, setIngredientName] = useState('');
     const [ingredientType, setIngredientType] = useState('');
     const [ingredientQuantity, setIngredientQuantity] = useState('');
@@ -14,20 +16,21 @@ const Ingredient = (props) => {
     const [itemId, setItemId] = useState(null);
 
     const emptyValue = () => {
+        setIngredientImage('');
         setIngredientName('');
         setIngredientType('');
         setIngredientQuantity('');
     }
     
     const onCreateIngredientHandler = () => {
-        if(!ingredientName || !ingredientType || !ingredientQuantity) {
+        if(!ingredientImage || !ingredientName || !ingredientType || !ingredientQuantity) {
             alert('Please fill the data!');
         } 
         else if (itemId) {
             props.setIngredientItems(
                 props.ingredientItems.map(item => {
                 if(item.id === itemId) {
-                    return {id: itemId, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
+                    return {id: itemId, image: ingredientImage, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
                 } 
                 return item;
                 }));
@@ -38,6 +41,7 @@ const Ingredient = (props) => {
          else {
             const newData = {
                 id: new Date().getTime().toString(), 
+                image: ingredientImage,
                 name: ingredientName, 
                 type: ingredientType, 
                 quantity: ingredientQuantity,
@@ -61,6 +65,7 @@ const Ingredient = (props) => {
     const handleEdit = (item) => {
         setIsShowForm(true);
         setItemId(item.id);
+        setIngredientImage(item.image);
         setIngredientName(item.name);
         setIngredientType(item.type);
         setIngredientQuantity(item.quantity);
@@ -73,11 +78,17 @@ const Ingredient = (props) => {
         emptyValue();
         setItemId(null);
     }
+
+    const selectIngredientImage = (image) => {
+        setIngredientImage(image);
+    }
     
   return (
     <div className='ingredientsContainer'>
         {isShowForm && (
         <div className='ingredientFormContainer'>
+            <h5>Pick Ingredient</h5>
+            <Modal list={ingredientGallery} imageValue={ingredientImage} selectHandler={selectIngredientImage} />
             <CustomInput 
                 type='text'
                 labelText='Ingredient Name'
@@ -120,11 +131,12 @@ const Ingredient = (props) => {
         </div>
         <div className='ingredientsListContainer'>
             {props.ingredientItems.map((item) => {
+                console.log('item', item);
                 return(
                     <div className='ingredientRow' key={item.id}>
                         <div className='ingredientContent'>
                             <div className='vegetableIcon'>
-                                <GiTomato size={20}/>
+                                <img src={`/images/${item.image}`} alt='Ingredient' title='Ingredient' />
                             </div>
                             <div>
                                 <p className='ingredientName'>{item.name}</p>

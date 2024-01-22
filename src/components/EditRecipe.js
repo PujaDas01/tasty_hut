@@ -6,6 +6,7 @@ import CustomButton from './CustomButton';
 import { RecipeContext } from '../context/recipeContext';
 import {toast} from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
+import { dishGallery } from '../services/dishGallery';
 
 const EditRecipe = () => {
   const [selectedImage, setSelectedImage] = useState('');
@@ -107,7 +108,7 @@ const handleEditRecipe = () => {
       <div className='recipeDetailContainer'>
         <section className='detailTopSection'>
             <div className='recipeImageContainer'>
-              <Modal imageValue={selectedImage} selectHandler={selectImageHandler} />
+              <Modal list={dishGallery} imageValue={selectedImage} selectHandler={selectImageHandler} />
             </div>
             <div className='recipeTitleContainer'>
                 <CustomInput 

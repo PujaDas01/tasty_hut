@@ -11,18 +11,21 @@ export const recipeList = [
         ingredients: [
             {
                 id: '1',
+                ingredientImage: 'bell-pepper.jpg',
                 name: 'Chicken',
                 type: 'Tinned',
                 quantity: '400g',
             },
             {
                 id: '2',
+                ingredientImage: 'garlic.jpg',
                 name: 'Garlic',
                 type: 'Finely chopped',
                 quantity: '50g',
             },
             {
                 id: '3',
+                ingredientImage: 'tomato.jpg',
                 name: 'Ginger',
                 type: 'Finely chopped',
                 quantity: '500g',
@@ -42,18 +45,21 @@ export const recipeList = [
         ingredients: [
             {
                 id: '1',
+                ingredientImage: 'bell-pepper.jpg',
                 name: 'Pasta',
                 type: 'Boiled',
                 quantity: '500g',
             },
             {
                 id: '2',
+                ingredientImage: 'tomato.jpg',
                 name: 'Tomatoes',
                 type: 'Chopped',
                 quantity: '100g',
             },
             {
                 id: '3',
+                ingredientImage: 'garlic.jpg',
                 name: 'Coriander',
                 type: 'Chopped',
                 quantity: '10g',
@@ -73,24 +79,28 @@ export const recipeList = [
         ingredients: [
             {
                 id: '1',
+                ingredientImage: 'garlic.jpg',
                 name: 'Flour',
                 type: 'Knead',
                 quantity: '500g',
             },
             {
                 id: '2',
+                ingredientImage: 'tomato.jpg',
                 name: 'Sausage',
                 type: 'Sliced',
                 quantity: '400g',
             },
             {
                 id: '3',
+                ingredientImage: 'bell-pepper.jpg',
                 name: 'Olives',
                 type: 'Chopped',
                 quantity: '50g',
             },
             {
                 id: '4',
+                ingredientImage: 'corn.jpg',
                 name: 'Cheese',
                 type: 'Grated',
                 quantity: '100g',
@@ -110,24 +120,28 @@ export const recipeList = [
         ingredients: [
             {
                 id: '1',
+                ingredientImage: 'tomato.jpg',
                 name: 'Green vegetables',
                 type: 'Chopped',
                 quantity: '500g',
             },
             {
                 id: '2',
+                ingredientImage: 'garlic.jpg',
                 name: 'Chopped tomatoes',
                 type: 'Tinned',
                 quantity: '400g',
             },
             {
                 id: '3',
+                ingredientImage: 'bell-pepper.jpg',
                 name: 'Coriander',
                 type: 'Chopped',
                 quantity: '50g',
             },
             {
                 id: '4',
+                ingredientImage: 'corn.jpg',
                 name: 'Onions',
                 type: 'Sliced',
                 quantity: '100g',
