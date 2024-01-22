@@ -17,22 +17,26 @@ const EditRecipe = () => {
   const [recipeType, setRecipeType] = useState('');
   const [ingredientList, setIngredientList] = useState([]);
   const [instructions, setInstructions] = useState('');
-  const {editRecipeData, getRecipeListDetail} = useContext(RecipeContext);
+  const {getRecipeListDetail, editRecipeData, deleteRecipeData} = useContext(RecipeContext);
   const params = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const data = getRecipeListDetail(params.id);
-    setDishTitle(data.title);
-    setTotalTime(data.totalTime);
-    setPrep(data.prep);
-    setChill(data.chill);
-    setCook(data.cook);
-    setRecipeType(data.recipeType);
-    setInstructions(data.instructions);
-    setSelectedImage(data.image);
-    setIngredientList(data.ingredients);
-  }, [params, getRecipeListDetail]);
+      const data = getRecipeListDetail(params.id);
+    if(data) {
+        setDishTitle(data.title);
+        setTotalTime(data.totalTime);
+        setPrep(data.prep);
+        setChill(data.chill);
+        setCook(data.cook);
+        setRecipeType(data.recipeType);
+        setInstructions(data.instructions);
+        setSelectedImage(data.image);
+        setIngredientList(data.ingredients);
+    } else {
+        navigate(-1);
+    }
+  }, [params, getRecipeListDetail, navigate]);
 
   const selectImageHandler = (image) => {
     setSelectedImage(image);
@@ -66,17 +70,38 @@ const handleEditRecipe = () => {
         setIngredientList([]);
         setInstructions('');
         toast.success('Data Updated Successfully !');
-        navigate(`/gallery/`);
+        navigate(-1);
     }
 }
+
+    const handleDeleteRecipe = () => {
+        deleteRecipeData(params.id);
+        setSelectedImage('');
+        setDishTitle('');
+        setTotalTime('');
+        setPrep('');
+        setChill('');
+        setCook('');
+        setRecipeType('');
+        setIngredientList([]);
+        setInstructions('');
+        toast.success('Data Deleted Successfully !');
+        navigate(-1);
+    }
   
   return (
     <div className='addRecipeWrapper commonWrapper'>
         <div className='btnHandlerContainer'>
             <CustomButton
+                secondaryContainerClassName='editRecipeButton'
                 buttonType='secondary'
                 buttonText='Edit Recipe'
                 onClick={handleEditRecipe}
+            /> 
+            <CustomButton
+                buttonType='secondary'
+                buttonText='Delete Recipe'
+                onClick={handleDeleteRecipe}
             />
         </div>
       <div className='recipeDetailContainer'>

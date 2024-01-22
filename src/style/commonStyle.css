@@ -478,7 +478,11 @@ textarea:focus {
     padding: 0;
     margin-left: 1rem;
 }
-/* --------------ADD RECIPE STYLE--------------- */
+/* --------------ADD RECIPE STYLE, EDIT RECIPE STYLE--------------- */
+.editRecipeButton {
+    margin-right: 1rem;
+}
+
 .addRecipeWrapper {
     padding: 0;
 }
@@ -486,8 +490,8 @@ textarea:focus {
 .btnHandlerContainer {
     display: flex;
     justify-content: flex-end;
-    }
+}
     
-    .btnHandlerContainer div {
-        width: 20%;
+.btnHandlerContainer div {
+    width: 20%;
 }

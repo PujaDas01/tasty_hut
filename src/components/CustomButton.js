@@ -5,7 +5,7 @@ const CustomButton = (props) => {
   return (
     <>
       {props.buttonType === 'secondary' ? 
-        (<div className='secondaryButtonContainer'>
+        (<div className={`secondaryButtonContainer ${props.secondaryContainerClassName}`}>
           <button className={`secondaryButton ${props.secondaryClassName}`} style={props.secondaryStyle} onClick={props.onClick}>{props.buttonText}</button>
         </div>) :
         (<div style={props.customWrapperStyle} className='customButtonContainer'>

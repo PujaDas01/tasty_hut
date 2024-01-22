@@ -24,6 +24,12 @@ export const RecipeContextProvider = (props) => {
         setRecipeListData(data);
     }
 
+    const deleteRecipeData = (deleteDataId) => {
+        const data = recipeListData.filter((item) => item.id !== deleteDataId);
+        setRecipeListData(data);
+        return data;
+    }
+
     return(
         <RecipeContext.Provider
             value={{
@@ -31,6 +37,7 @@ export const RecipeContextProvider = (props) => {
                 getRecipeListDetail,
                 addRecipeData,
                 editRecipeData,
+                deleteRecipeData
             }}>
                 {props.children}
         </RecipeContext.Provider>
