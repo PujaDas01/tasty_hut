@@ -30,7 +30,7 @@ const Ingredient = (props) => {
             props.setIngredientItems(
                 props.ingredientItems.map(item => {
                 if(item.id === itemId) {
-                    return {id: itemId, image: ingredientImage, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
+                    return {id: itemId, ingredientImage: ingredientImage, name: ingredientName, type: ingredientType, quantity: ingredientQuantity};
                 } 
                 return item;
                 }));
@@ -41,8 +41,8 @@ const Ingredient = (props) => {
          else {
             const newData = {
                 id: new Date().getTime().toString(), 
-                image: ingredientImage,
-                name: ingredientName, 
+                ingredientImage: ingredientImage,
+                name: ingredientName,
                 type: ingredientType, 
                 quantity: ingredientQuantity,
             }
@@ -65,7 +65,7 @@ const Ingredient = (props) => {
     const handleEdit = (item) => {
         setIsShowForm(true);
         setItemId(item.id);
-        setIngredientImage(item.image);
+        setIngredientImage(item.ingredientImage);
         setIngredientName(item.name);
         setIngredientType(item.type);
         setIngredientQuantity(item.quantity);
@@ -86,35 +86,42 @@ const Ingredient = (props) => {
   return (
     <div className='ingredientsContainer'>
         {isShowForm && (
-        <div className='ingredientFormContainer'>
-            <h5>Pick Ingredient</h5>
-            <Modal list={ingredientGallery} imageValue={ingredientImage} selectHandler={selectIngredientImage} />
-            <CustomInput 
-                type='text'
-                labelText='Ingredient Name'
-                inputId='ingredientName'
-                value={ingredientName}
-                onChange={(e) => setIngredientName(e.target.value)}
-            />
-            <CustomInput 
-                type='text'
-                labelText='Ingredient Type'
-                inputId='ingredientType'
-                value={ingredientType}
-                onChange={(e) => setIngredientType(e.target.value)}
-            />
-            <CustomInput 
-                type='text'
-                labelText='Quantity'
-                inputId='ingredientQuantity'
-                value={ingredientQuantity}
-                onChange={(e) => setIngredientQuantity(e.target.value)}
-            />
-            <CustomButton
-                buttonText={itemId ? 'Update' : 'Submit'}
-                onClick={onCreateIngredientHandler}
-            />
-        </div>)}
+        <>
+            <h3 className='ingredientFormHeading'>{itemId ? 'Update Ingredient' : 'Add Ingredient'}</h3>
+            <div className='ingredientFormContainer'>
+                <div className='ingredientImageContainer'>
+                    <Modal list={ingredientGallery} imageValue={ingredientImage} selectHandler={selectIngredientImage} />
+                </div>
+                <div className='ingredientForm'>
+                    <CustomInput 
+                        type='text'
+                        labelText='Ingredient Name'
+                        inputId='ingredientName'
+                        value={ingredientName}
+                        onChange={(e) => setIngredientName(e.target.value)}
+                    />
+                    <CustomInput 
+                        type='text'
+                        labelText='Ingredient Type'
+                        inputId='ingredientType'
+                        value={ingredientType}
+                        onChange={(e) => setIngredientType(e.target.value)}
+                    />
+                    <CustomInput 
+                        type='text'
+                        labelText='Quantity'
+                        inputId='ingredientQuantity'
+                        value={ingredientQuantity}
+                        onChange={(e) => setIngredientQuantity(e.target.value)}
+                    />
+                    <CustomButton
+                        buttonText={itemId ? 'Update' : 'Submit'}
+                        onClick={onCreateIngredientHandler}
+                        buttonClassName='ingredientAddUpdateButton'
+                    />
+                </div>
+            </div>
+        </>)}
         <div className='ingredientTitleContainer'>
             <h2>Ingredients</h2>
                 {toggleButton ? (
@@ -131,12 +138,11 @@ const Ingredient = (props) => {
         </div>
         <div className='ingredientsListContainer'>
             {props.ingredientItems.map((item) => {
-                console.log('item', item);
                 return(
                     <div className='ingredientRow' key={item.id}>
                         <div className='ingredientContent'>
                             <div className='vegetableIcon'>
-                                <img src={`/images/${item.image}`} alt='Ingredient' title='Ingredient' />
+                                <img src={`/images/${item.ingredientImage}`} alt='Ingredient' title='Ingredient' />
                             </div>
                             <div>
                                 <p className='ingredientName'>{item.name}</p>

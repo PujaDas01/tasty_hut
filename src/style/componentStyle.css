@@ -393,7 +393,6 @@
     gap: 1.3rem;
 }
 
-/* TEST IMAGE CHECK */
 .vegetableIcon {
     background-color: #e6b1ab;
     padding: 0.2rem;
@@ -411,8 +410,6 @@
     height: auto;
     border-radius: 50%;
 }
-
-/* TEST IMAGE CHECK */
 
 .ingredientName {
     font-size: 13px;
