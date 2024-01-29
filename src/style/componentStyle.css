@@ -448,7 +448,7 @@
 
 /* ------------------------ABOUT STYLE---------------- */
 .aboutContainer {
-    background-color: #fc4b37;
+    background-color: #f9ebea;
     padding: 3rem;
     border-radius: 25px;
     display: flex;
@@ -458,7 +458,7 @@
 
 .aboutContent {
     flex: 4;
-    color: white;
+    color: brown;
 }
 
 .aboutContent h1 {
@@ -475,6 +475,10 @@
     flex: 3;
     display: flex;
     align-items: center;
+}
+
+.aboutBottomContainer {
+    background-color: #c7e7fe;
 }
 
 .paraSpace {

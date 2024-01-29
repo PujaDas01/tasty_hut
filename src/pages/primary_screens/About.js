@@ -19,7 +19,7 @@ const About = () => {
             />
           </div>
         </section>
-        <section className='aboutContainer'>
+        <section className='aboutContainer aboutBottomContainer'>
         <div className='aboutImageContent'>
             <BgImage
               imageSource='chef.png'
