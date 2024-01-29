@@ -445,3 +445,38 @@
     font-weight: 500;
     padding-bottom: 1rem;
 }
+
+/* ------------------------ABOUT STYLE---------------- */
+.aboutContainer {
+    background-color: #fc4b37;
+    padding: 3rem;
+    border-radius: 25px;
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.aboutContent {
+    flex: 4;
+    color: white;
+}
+
+.aboutContent h1 {
+    font-size: 30px;
+    padding-bottom: 1rem;
+}
+
+.aboutContent p {
+    font-size: 14px;
+    padding-top: 0.5rem;
+}
+
+.aboutImageContent {
+    flex: 3;
+    display: flex;
+    align-items: center;
+}
+
+.paraSpace {
+    padding-bottom: 1.5rem;
+}
